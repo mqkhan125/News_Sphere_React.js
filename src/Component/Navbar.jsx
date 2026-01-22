@@ -3,7 +3,7 @@ import Wrapper from './Wrapper';
 
 const Navbar = () => {
   return (
-    <div className='bg-base-200'>
+    <div className='bg-black/10 text-white'>
     <Wrapper>
         <div className="navbar shadow-sm">
           <div className="flex-1">
@@ -13,7 +13,7 @@ const Navbar = () => {
             <input
               type="text"
               placeholder="Search"
-              className="input input-bordered w-24 md:w-auto"
+              className="input input-bordered w-24 md:w-auto bg-black/10 border-none outline-none"
               />
 
             <button className="btn btn-ghost btn-circle">
