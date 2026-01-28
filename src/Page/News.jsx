@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Wrapper from '../Component/Wrapper'
+import api from '../Config/Axios';
+import { useNewsContext } from '../ContextApi/NewsContext';
 
 const News = ({className}) => {
   return (
     <Wrapper>
       <div className={`grid grid-cols-4 py-3 gap-6 bg-[#0e131b] ${className}`}>
         <NewsCard />
+        {/* <NewsCard />
         <NewsCard />
         <NewsCard />
         <NewsCard />
@@ -13,14 +16,32 @@ const News = ({className}) => {
         <NewsCard />
         <NewsCard />
         <NewsCard />
-        <NewsCard />
-        <NewsCard />
+        <NewsCard /> */}
       </div>
     </Wrapper>
   );
 }
 
+// 0758b6f658254f1b822e62d6c2413ddf
+
 const NewsCard = () => {
+
+   const state = useNewsContext();
+   console.log(state);
+
+  const fetchData = async () => {
+    const res = await api.get(
+         `/everything?q=tesla&from=2025-12-28&sortBy=publishedAt&apiKey=${import.meta.env.VITE_API_KEY}`
+    )
+    console.log(res.data)
+  }
+
+
+
+  useEffect(() => {
+    fetchData()
+  },[])
+
     return (
       <div className="card bg-black/20 text-white shadow-sm">
         <figure>
