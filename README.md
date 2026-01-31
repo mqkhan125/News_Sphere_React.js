@@ -1,16 +1,109 @@
-# React + Vite
+# 📰 NewsSphere
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive news application built with **React** that delivers real-time headlines from around the world. NewsSphere focuses on performance, clean architecture, and a polished user experience using industry‑standard frontend practices.
 
-Currently, two official plugins are available:
+---
+<img width="940" height="492" alt="NewsSphere" src="https://github.com/user-attachments/assets/33308dc7-fada-448c-b5e3-e95b6591ec49" />
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Live Overview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+NewsSphere allows users to:
 
-## Expanding the ESLint configuration
+* Browse the latest news across multiple categories
+* Search for articles with optimized, debounced input
+* Experience smooth loading states during data fetching
+* Read full articles via external sources
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ✨ Features
+
+* 🔍 **Debounced Search** – Prevents excessive API calls while typing
+* 🗂️ **Category-Based Filtering** – Business, Technology, Health, Sports, and more
+* 🌐 **Global State Management** – Powered by React Context API
+* ⏳ **Animated Loader** – Clear feedback during async operations
+* 🖼️ **Graceful Image Handling** – Handles broken or missing image URLs
+* 🔐 **Secure API Configuration** – API keys stored safely using environment variables
+* 📱 **Responsive UI** – Optimized for all screen sizes
+
+---
+
+## 🧰 Tech Stack
+
+* **React** (Vite)
+* **Context API** – Global state management
+* **Axios** – API requests
+* **Tailwind CSS** + **DaisyUI** – Styling and UI components
+* **NewsAPI.org** – News data provider
+
+---
+
+## 📂 Project Structure
+
+```
+src/
+├── Components/        # Reusable UI components (Loader, Wrapper, etc.)
+├── ContextApi/        # Global state (NewsContext)
+├── Config/            # Axios base configuration
+├── Pages/             # Main pages (News)
+├── App.jsx
+└── main.jsx
+
+---
+
+## ⚙️ Environment Setup
+
+Create a `.env` file in the root directory:
+
+```
+VITE_API_KEY=your_news_api_key_here
+```
+
+---
+
+## 🛠️ Installation & Usage
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/newssphere.git
+
+# Navigate to project directory
+cd newssphere
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+---
+
+## 🧠 Key Implementation Highlights
+
+* API requests are abstracted using a centralized Axios instance
+* Search input is debounced using `setTimeout` and `useEffect`
+* Loading state is handled globally to ensure consistent UX
+* Conditional rendering prevents UI crashes from invalid API data
+
+---
+
+## 📌 Future Improvements
+
+* Skeleton loaders for article cards
+* Pagination or infinite scroll
+* Bookmark / save articles
+* Dark/Light theme toggle
+* API request cancellation with AbortController
+
+---
+
+## 👨‍💻 Author
+
+**Muhammad Qasim**
+
+Frontend Developer | React Enthusiast
+
+---
