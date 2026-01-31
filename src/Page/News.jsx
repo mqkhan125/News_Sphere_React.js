@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import Wrapper from "../Component/Wrapper";
 import { useNewsContext } from "../ContextApi/NewsContext";
+import Loader from "../Component/Loader";
 
 const News = ({ className }) => {
-  const { news, setNews, fetchData } = useNewsContext();
+  const { news, setNews, fetchData, loading } = useNewsContext();
   console.log(news);
 
   useEffect(() => {
@@ -12,6 +13,8 @@ const News = ({ className }) => {
       setNews(data.articles);
     })();
   }, []);
+
+  if(loading) return <Loader className={'w-fit m-auto py-24 mb-32'} />
 
   return (
     <Wrapper>
